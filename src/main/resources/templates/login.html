@@ -1,0 +1,56 @@
+
+#parse("common/header.html")
+<body>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="middle-login img-responsive">
+                <div class="mid-panel">
+                    <i id="loading" class="hidden fa fa-spinner fa-spin bigicon"></i>
+                    <h1 class="login">
+                        <span class="fa fa-quote-left"></span> 登录 <span class="fa fa-quote-right"></span>
+                    </h1>
+
+                    <div>
+                        <form action="loginUserHome" method="post" onsubmit="return(loginbtn_click())">
+                            <input class="login" id="username" type="text"  placeholder="登录账号" name="username">
+                            <input class="login" id="password" type="password" placeholder="输入密码" name="password">
+
+                            <div class="buttonwrapper">
+                                <button id="loginbtn" class="btn btn-success loginbutton">
+                                    <span class="fa fa-check"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function loginbtn_click() {
+        var msg = "";
+        if ($("#username").val().length == 0) {
+            msg = "请输入你的用户名!";
+            alert(msg);
+            return false;
+        }
+        if ($("#password").val().length == 0) {
+            msg = "请输入您的密码!";
+            alert(msg);
+            return false;
+        }
+        if ($("#username").val().length !== 0 && $("#password").val().length !== 0) {
+            $('#loading').removeClass('hidden');
+        }
+    }
+</script>
+#parse("common/footer.html")
+
+
+</body>
+</html>
