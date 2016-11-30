@@ -39,7 +39,7 @@ public class LoginController {
 		model.addAttribute("user", (User)map.get("user"));
 		session.setAttribute("user", (User)map.get("user"));
 		
-		return "redirect:home";
+		return "home";
 	}
 
 	@RequestMapping(value = {"/logout"})
